@@ -21,10 +21,11 @@
 	<constant name="struts.multipart.maxSize" value="104857600" />
 
 	<!-- 需要时配置相应的action -->
-	<package name="defaultPackage" extends="struts-default">
-		<!-- 测试用的action,当与Spring整合后，class属性就是bean的名称-->
-		<action name="test" class="com.webFrame.test.TestAction">
-			<result name="success">/test.jsp</result>
+	<package name="defaultPackage" namespace="/" extends="struts-default">
+		<!-- 测试用的action,当与Spring整合后，class属性就是bean的名称 -->
+		<action name="login" class="com.z2.Action.LoginAction">
+			<result name="loginSuccess">/loginsuccess.jsp</result>
+			<result name="loginFailure">/loginfailure.jsp</result>
 		</action>
 	</package>
 </struts>
