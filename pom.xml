@@ -213,6 +213,7 @@
 				</configuration>
 			</plugin>
 			<plugin>
+			<!--  e:\myproject\SayHello>mvn -Djetty.port=8087  jetty:run -->
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>maven-jetty-plugin</artifactId>
 			</plugin>
