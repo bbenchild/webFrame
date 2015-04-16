@@ -112,7 +112,8 @@
 		<!-- hbm方式配置 -->
 		<property name="mappingDirectoryLocations"> 
 			<list> 
-				<value>classpath*:com/webFrame/bean</value> 
+				 <value>classpath*:com/z2/bean</value> 
+				<!-- <value>com/z2/bean/User.hbm.xml</value>-->
 			</list>
 		</property>
 		

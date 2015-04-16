@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.webFrame.bean.User;
+import com.z2.bean.User;
 
 public class SpringTest {
 	private static ApplicationContext ac;
@@ -39,6 +39,7 @@ public class SpringTest {
 		User u = new User();
 		u.setId(null);
 		u.setName("小明");
+		u.setPassword("123");
 		session.save(u);
 		ts.commit();
 		session.cancelQuery();

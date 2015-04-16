@@ -1,16 +1,51 @@
 package com.z2.Action;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.opensymphony.xwork2.ActionSupport;
+import com.z2.bean.User;
+
 
 public class LoginAction extends ActionSupport {
-	private String username; 
-	private String password;
-	@Override
-	public String execute() throws Exception {
-		System.out.println("username" + username);
-		if (username.equals("struts2")) 
+	/**
+	 * 
+	 */
+	
+	
+	private static ApplicationContext ac = new ClassPathXmlApplicationContext(new String[] {
+			"classpath:spring.xml", "classpath:spring-hibernate.xml" });;
+
+	
+
+	
+	private static final long serialVersionUID = -416500284096309064L;
+	private User UUU; 
+	
+	
+	public String login() throws Exception {
+		System.out.println("username" + UUU.getName());
+		if (UUU.getName().equals("struts2")) 
 		{    
-			return "loginSuccess";   
+			SessionFactory sessionFactory = (SessionFactory) ac
+					.getBean("sessionFactory");
+			// 获取或打开session
+			Session session = sessionFactory.openSession();
+			// 开启事务处理
+			Transaction ts = session.beginTransaction();
+			User u = new User();
+			u.setId(null);
+			u.setName("小明");
+			u.setPassword("123");
+			session.save(u);
+			ts.commit();
+			session.cancelQuery();
+			return "loginSuccess"; 
+
 		}  
 		else 
 		{     
@@ -19,17 +54,27 @@ public class LoginAction extends ActionSupport {
 
 	}
 	
-	public String getPassword() {
-		return password;
+	public String register() throws Exception {
+		System.out.println("username" + UUU.getName());
+		if (UUU.getName().equals("struts2")) 
+		{    
+			return "registerSuccess";   
+		}  
+		else 
+		{     
+			return "registerFailure";   
+		} 
+
 	}
-	public void setPassword(String password) {
-		this.password = password;
+
+	public User getUser() {
+		return UUU;
 	}
-	public String getUsername() {
-		return username;
+
+	public void setUser(User user) {
+		UUU = user;
 	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
+	
+	public String get(){   return "这是User中的get方法";  } 
 	
 }

@@ -23,9 +23,15 @@
 	<!-- 需要时配置相应的action -->
 	<package name="defaultPackage" namespace="/" extends="struts-default">
 		<!-- 测试用的action,当与Spring整合后，class属性就是bean的名称 -->
-		<action name="login" class="com.z2.Action.LoginAction">
+		<action name="login" class="com.z2.Action.LoginAction" method="login">
 			<result name="loginSuccess">/loginsuccess.jsp</result>
 			<result name="loginFailure">/loginfailure.jsp</result>
 		</action>
+		
+				<action name="register" class="com.z2.Action.LoginAction" method="register">
+			<result name="registerSuccess">/registersuccess.jsp</result>
+			<result name="registerFailure">/registerfailure.jsp</result>
+		</action>
+		
 	</package>
 </struts>

@@ -8,8 +8,7 @@
 <head>
 <title>抱歉~</title>
 </head>
-<body>    登录失败，错误的用户名：<s:property value="user.name"/><br>
-get:<s:property value="%{get()}"/> <br>
+<body>    注册失败，错误的用户名：<s:property value="username"/><br>
    <a href="<%=request.getContextPath()%>/login.jsp">返回</a>   
    </body>
 </html>
