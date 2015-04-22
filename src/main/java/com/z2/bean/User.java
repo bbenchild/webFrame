@@ -1,4 +1,4 @@
-package com.webFrame.bean;
+package com.z2.bean;
 
 public class User {
 

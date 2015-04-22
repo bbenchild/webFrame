@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.webFrame.bean.User;
+import com.z2.bean.User;
 
 public class SpringTest {
 	private static ApplicationContext ac;

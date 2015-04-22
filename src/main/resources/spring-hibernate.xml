@@ -120,7 +120,7 @@
 		<!-- hbm方式配置 -->
 		<property name="mappingDirectoryLocations"> 
 			<list> 
-				<value>classpath*:com/webFrame/bean</value> 
+				<value>classpath*:com/z2/bean</value> 
 			</list>
 		</property> 
 
