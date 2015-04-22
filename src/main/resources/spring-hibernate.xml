@@ -133,8 +133,29 @@
 	</bean>
 
 
+ <bean id="userDao" class="com.z2.daoImpl.UserDaoImpl">  
+        <property name="sessionFactory">  
+            <ref bean="sessionFactory" />  
+        </property>  
+    </bean>  
+  
+    <!--用户注册业务逻辑类 -->  
+    <bean id="userManager" class="com.z2.serviceImpl.UserManagerImpl">  
+        <property name="dao">  
+            <ref bean="userDao" />  
+        </property>  
+    </bean>  
+  
+    <!-- 用户注册的Action -->  
+    <bean id="Login" class="com.z2.action.LoginAction">  
+        <property name="userManager">  
+            <ref bean="userManager" />  
+        </property>  
+    </bean>  
+
 	<!-- 事务切面配置 -->
 	<aop:config>
+			<!-- expression="execution(* me.gacl.service..*Impl.*(..))" -->
 		<aop:pointcut id="productServiceMethods"
 			expression="execution(* com.webFrame.biz.impl.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="productServiceMethods" />
