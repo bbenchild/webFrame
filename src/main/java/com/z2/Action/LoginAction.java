@@ -1,11 +1,5 @@
 package com.z2.action;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.z2.bean.User;
 import com.z2.service.UserManager;

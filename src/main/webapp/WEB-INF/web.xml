@@ -11,11 +11,12 @@
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring.xml,classpath:spring-hibernate.xml</param-value>
+		<!-- 配置文件修改，数据库将采用mongod spring-mongodb.xml spring-hibernate.xml -->
+		<param-value>classpath:spring.xml,classpath:spring-mongodb.xml</param-value>
 	</context-param>
 
 	<!-- druid过滤器 exclusions参数其实也可去掉 -->
-	<filter>
+ 	<filter>
 		<filter-name>druidWebStatFilter</filter-name>
 		<filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
 		<init-param>
@@ -30,10 +31,10 @@
 	<filter-mapping>
 		<filter-name>druidWebStatFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> 
 
 	<!-- Spring的OpenSessionInView实现 -->
-	<filter>
+<!-- 	<filter>
 		<filter-name>openSessionInViewFilter</filter-name>
 		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
 		<init-param>
@@ -44,7 +45,7 @@
 	<filter-mapping>
 		<filter-name>openSessionInViewFilter</filter-name>
 		<url-pattern>*.action</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 
 	<!-- struts2的过滤器 -->
 	<filter>

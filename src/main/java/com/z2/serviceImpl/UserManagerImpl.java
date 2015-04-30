@@ -14,12 +14,20 @@ public class UserManagerImpl implements UserManager {
 	@Override
 	public void regUser(User user) {
 
-	        dao.saveUser(user);  
+	        dao.insert(user);  
 	}
 	@Override
 	public boolean checkUser(User user) {
 		// TODO Auto-generated method stub
-		return dao.checkUser(user);
+		User muser = dao.findOneByUsername(user.getName());
+		if(muser.getPassword().equals(user.getPassword()))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 }
