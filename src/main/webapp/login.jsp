@@ -8,7 +8,8 @@
 <form action="<%=request.getContextPath()%>/login.action" method="get">
    用户名： <input type="text" name="user.name"><br>
    密码：<input type="password" name="user.password"><br>   
-   <input type="submit" value="login">     
+   <input type="submit" value="登录">     <br>
+   <a href="<%=request.getContextPath()%>/register.jsp">注册</a>   
    </form>
    </body>
 </html>

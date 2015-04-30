@@ -12,9 +12,15 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	@Override
-	public void regUser(User user) {
-
-		dao.insert(user);
+	public boolean regUser(User user) {
+		User muser = dao.findOneByUsername(user.getName());
+		if(muser != null){
+			return false;
+		}
+		else{
+			dao.insert(user);
+			return true;
+		}
 	}
 
 	@Override
