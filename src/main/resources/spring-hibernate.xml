@@ -153,6 +153,13 @@
         </property>  
     </bean>  
 
+    <!-- 用户注册的Action -->  
+    <bean id="Register" class="com.z2.action.RegisterAction">  
+        <property name="userManager">  
+            <ref bean="userManager" />  
+        </property>  
+    </bean>  
+
 	<!-- 事务切面配置 -->
 	<aop:config>
 			<!-- expression="execution(* me.gacl.service..*Impl.*(..))" -->

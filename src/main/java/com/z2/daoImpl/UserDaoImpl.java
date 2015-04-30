@@ -72,7 +72,7 @@ public class UserDaoImpl implements UserDao {
 	    @Override  
 	    public User findOneByUsername(String username) {  
 	        Query query = new Query();  
-	        query.addCriteria(new Criteria("name.username").is(username));  
+	        query.addCriteria(new Criteria("name").is(username));  
 	        return this.mongoTemplate.findOne(query, User.class);  
 	    }  
 	  

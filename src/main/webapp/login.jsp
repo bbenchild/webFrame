@@ -7,7 +7,7 @@
 <body>
 <form action="<%=request.getContextPath()%>/login.action" method="get">
    用户名： <input type="text" name="user.name"><br>
-   密码：<input type="password" name="password"><br>   
+   密码：<input type="password" name="user.password"><br>   
    <input type="submit" value="login">     
    </form>
    </body>

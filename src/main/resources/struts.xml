@@ -27,5 +27,10 @@
 			<result name="loginSuccess">/loginsuccess.jsp</result>
 			<result name="loginFailure">/loginfailure.jsp</result>
 		</action>
+		
+				<action name="register" class="com.z2.action.RegisterAction">
+			<result name="registerSuccess">/registersuccess.jsp</result>
+			<result name="registerFailure">/registerfailure.jsp</result>
+		</action>
 	</package>
 </struts>

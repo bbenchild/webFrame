@@ -24,7 +24,8 @@ public class LoginAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		System.out.println("username" + user.getName());
+		System.out.println("login:" + "username:" + user.getName());
+		System.out.println("login:" + "password:" + user.getPassword());		
 		if (userManager.checkUser(user)) {
 			
 			// SessionFactory sessionFactory = (SessionFactory) ac
