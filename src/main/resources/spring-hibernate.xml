@@ -164,7 +164,7 @@
 	<aop:config>
 			<!-- expression="execution(* me.gacl.service..*Impl.*(..))" -->
 		<aop:pointcut id="productServiceMethods"
-			expression="execution(* com.webFrame.biz.impl.*.*(..))" />
+			expression="execution(* com.z2.serviceImpl.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="productServiceMethods" />
 	</aop:config>
 
