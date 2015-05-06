@@ -43,7 +43,7 @@
   
     <context:annotation-config />  
   
-  <bean id="userDao" class="com.z2.daoImpl.UserDaoImpl">  
+ <bean id="userDao" class="com.z2.daoImpl.UserDaoImpl">    
 
     </bean>  
   
