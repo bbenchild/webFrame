@@ -1,10 +1,14 @@
 package com.z2.action;
 
-import com.opensymphony.xwork2.ActionSupport;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.z2.bean.User;
 import com.z2.service.UserManager;
 
-public class LoginAction extends ActionSupport {
+@Controller 
+@RequestMapping 
+public class LoginAction{
 
 	// private String username;
 	private String password;
@@ -22,7 +26,7 @@ public class LoginAction extends ActionSupport {
 	// "classpath:spring.xml", "classpath:spring-hibernate.xml" });
 	// }
 
-	@Override
+	
 	public String execute() throws Exception {
 		System.out.println("login:" + "username:" + user.getName());
 		System.out.println("login:" + "password:" + user.getPassword());		

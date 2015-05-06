@@ -1,15 +1,15 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 	<head>
 		<title>中二的登录页面</title>
 	</head>
 <body>
-<form action="<%=request.getContextPath()%>/login.action" method="get">
-   用户名： <input type="text" name="user.name"><br>
-   密码：<input type="password" name="user.password"><br>   
+<form action="<c:url value="/login"/>">
+   用户名： <input type="text" name="name"><br>
+   密码：<input type="password" name="password"><br>   
    <input type="submit" value="登录">     <br>
-   <a href="<%=request.getContextPath()%>/register.jsp">注册</a>   
+   <a href="<c:url value="/register.jsp"/>">注册</a>   
    </form>
    </body>
 </html>

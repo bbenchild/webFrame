@@ -4,7 +4,9 @@ import java.util.Date;
 
 import org.springframework.data.annotation.Id;  
 import org.springframework.data.mongodb.core.mapping.Document;  
+import org.springframework.stereotype.Repository;
 
+@Repository 
 @Document(collection = "user")
 public class User {
 

@@ -228,7 +228,7 @@
 			<version>0.9.2.1</version> </dependency> -->
 
 		<!-- struts -->
-		<dependency>
+<!--		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
 			<version>2.3.4</version>
@@ -249,7 +249,7 @@
 			<artifactId>struts2-convention-plugin</artifactId>
 			<version>2.3.4</version>
 		</dependency>
-
+-->
 <!-- http://blog.csdn.net/beyond667/article/details/8952724 -->
     <dependency>  
    <groupId>javassist</groupId>  

@@ -43,22 +43,17 @@
   
     <context:annotation-config />  
   
- <bean id="userDao" class="com.z2.daoImpl.UserDaoImpl">    
+<!--  <bean id="userDao" class="com.z2.daoImpl.UserDaoImpl">    
 
-    </bean>  
+    </bean>  -->  
   
     <!--用户注册业务逻辑类 -->  
-    <bean id="userManager" class="com.z2.serviceImpl.UserManagerImpl">  
+<!--    <bean id="userManager" class="com.z2.serviceImpl.UserManagerImpl">  
         <property name="dao">  
             <ref bean="userDao" />  
         </property>  
-    </bean>  
+    </bean> -->  
   
-    <!-- 用户注册的Action -->  
-    <bean id="Login" class="com.z2.action.LoginAction">  
-        <property name="userManager">  
-            <ref bean="userManager" />  
-        </property>  
-    </bean>  
+
   
 </beans> 

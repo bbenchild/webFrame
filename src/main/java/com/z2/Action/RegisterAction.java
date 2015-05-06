@@ -1,10 +1,9 @@
 package com.z2.action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import com.z2.bean.User;
 import com.z2.service.UserManager;
 
-public class RegisterAction extends ActionSupport{
+public class RegisterAction{
 	private User user;
 
 	private UserManager userManager;
@@ -25,7 +24,6 @@ public class RegisterAction extends ActionSupport{
 		this.userManager = userManager;
 	}
 
-	@Override
 	public String execute() throws Exception {
 		System.out.println("register:" + "username:" + user.getName());
 		System.out.println("register:" + "password:" + user.getPassword());

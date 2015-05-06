@@ -9,5 +9,6 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 </head> 
 <body> 
     <h1> 你插入数据成功了！！！</h1> 
+    <h1>Message : ${message}</h1>
 </body> 
 </html>

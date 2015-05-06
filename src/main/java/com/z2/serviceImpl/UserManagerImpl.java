@@ -1,15 +1,20 @@
 package com.z2.serviceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.z2.bean.User;
 import com.z2.dao.UserDao;
 import com.z2.service.UserManager;
 
+@Service
 public class UserManagerImpl implements UserManager {
+	@Autowired
 	private UserDao dao;
 
-	public void setDao(UserDao dao) {
-		this.dao = dao;
-	}
+//	public void setDao(UserDao dao) {
+//		this.dao = dao;
+//	}
 
 	@Override
 	public boolean regUser(User user) {
