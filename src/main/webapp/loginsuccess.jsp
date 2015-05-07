@@ -5,6 +5,6 @@
 <title>恭喜！！</title>
 </head>
 <body>
-登录成功！欢迎您，
+登录成功！欢迎您，${user.name}
 </body>
 </html>

@@ -7,7 +7,7 @@
 <head>
 <title>抱歉~</title>
 </head>
-<body>    登录失败，错误的用户名：<br>
+<body>    登录失败，错误的用户名：${user.name}<br>
    <a href="<%=request.getContextPath()%>/login.jsp">返回</a>   
    </body>
 </html>

@@ -13,16 +13,14 @@ import com.z2.service.UserManager;
 @RequestMapping 
 public class LoginController {
 
-	@Autowired
-	private User user;
 
 	@Autowired
 	private UserManager userManager;
 	@RequestMapping("/login")
-	public String login(HttpServletRequest request, ModelMap modelMap) {
-		System.out.println("login:" + "username:" + user.getName());
-		System.out.println("login:" + "password:" + user.getPassword());		
-		if (userManager.checkUser(user)) {
+	public String login(HttpServletRequest request, User loginUser) {
+		System.out.println("login:" + "username:" + loginUser.getName());
+		System.out.println("login:" + "password:" + loginUser.getPassword());		
+		if (userManager.checkUser(loginUser)) {
 			return "loginsuccess"; //
 		}
 		else
