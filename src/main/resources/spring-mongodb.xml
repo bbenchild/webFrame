@@ -18,7 +18,7 @@
              threads-allowed-to-block-for-connection-multiplier="200"  
              connect-timeout="200"  
              max-wait-time="200"  
-             auto-connect-retry="false"  
+             auto-connect-retry="true"  
              socket-keep-alive="true"  
              socket-timeout="200"  
              slave-ok="false"  
