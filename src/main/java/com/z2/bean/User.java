@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;  
 import org.springframework.data.mongodb.core.mapping.Document;  
 import org.springframework.stereotype.Repository;
+//import javax.validation.constraints.*;
 
 @Repository 
 @Document(collection = "user")
@@ -12,10 +13,12 @@ public class User {
 
     @Id  
     private String id;  
+//    @Pattern(regexp="w{4,30}")
     private String name;  
     private int age;  
     private int works;  
     private Date birth;  
+//    @Pattern(regexp="S{4,30}")
     private String password;  
     private String regionName;  
     private String[] special;  

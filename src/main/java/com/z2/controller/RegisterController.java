@@ -1,10 +1,12 @@
 package com.z2.controller;
 
 import javax.servlet.http.HttpServletRequest;
+//import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.z2.bean.User;
 import com.z2.service.UserManager;
@@ -15,13 +17,23 @@ public class RegisterController {
 	@Autowired
 	private UserManager userManager;
 	@RequestMapping("/register")
-	public String login(HttpServletRequest request, User registerUser) {
+	public ModelAndView login(HttpServletRequest request, User registerUser) {
 		System.out.println("register:" + "username:" + registerUser.getName());
-		System.out.println("register:" + "password:" + registerUser.getPassword());		
+		System.out.println("register:" + "password:" + registerUser.getPassword());
+		ModelAndView mav = new ModelAndView();
+//		if(bindingresult.hasErrors()){
+//			mav.setViewName("register");
+//			return mav;
+//		}
+		
 		if (userManager.regUser(registerUser)) {
-			return "registersuccess";
+			mav.setViewName("registersuccess");
+			mav.addObject("user", registerUser);
+			return mav;
 		} else {
-			return "registerfailure";
+			mav.setViewName("registerfailure");
+			mav.addObject("user", registerUser);
+			return mav;
 		}
 	}
 }
