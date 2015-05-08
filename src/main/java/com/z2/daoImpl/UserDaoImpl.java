@@ -6,8 +6,7 @@ import java.util.Set;
 import com.z2.bean.User;
 import com.z2.dao.UserDao;
 
-import org.slf4j.Logger;  
-import org.slf4j.LoggerFactory;  
+import org.apache.log4j.Logger; 
 import org.springframework.beans.factory.annotation.Autowired;  
 import org.springframework.data.domain.Sort;  
 import org.springframework.data.domain.Sort.Direction;  
@@ -24,7 +23,7 @@ import com.mongodb.DB;
 @Repository 
 public class UserDaoImpl implements UserDao {
 
-	 public static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);  
+	 public static final Logger logger = Logger.getLogger(UserDaoImpl.class);  
 	
 	 @Autowired  
 	    private MongoTemplate mongoTemplate;  
@@ -73,7 +72,15 @@ public class UserDaoImpl implements UserDao {
 	    public User findOneByUsername(String username) {  
 	        Query query = new Query();  
 	        query.addCriteria(new Criteria("name").is(username));  
-	        return this.mongoTemplate.findOne(query, User.class);  
+	        logger.info("username:" + username);
+	        List<User> ret =  this.mongoTemplate.find(query, User.class);
+	        if(ret.size() > 0){
+	        	return ret.get(0);
+	        }
+	        else{
+	        	return null;
+	        }
+	        	
 	    }  
 	  
 	    @Override  

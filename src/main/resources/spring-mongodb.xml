@@ -14,13 +14,13 @@
   
     <mongo:mongo host="120.27.102.34" port="27017" >
             <mongo:options  
-             connections-per-host="200"  
-             threads-allowed-to-block-for-connection-multiplier="200"  
-             connect-timeout="200"  
-             max-wait-time="200"  
+             connections-per-host="2000"  
+             threads-allowed-to-block-for-connection-multiplier="2000"  
+             connect-timeout="2000"  
+             max-wait-time="2000"  
              auto-connect-retry="true"  
              socket-keep-alive="true"  
-             socket-timeout="200"  
+             socket-timeout="2000"  
              slave-ok="false"  
              write-number="1"  
              write-timeout="0"  

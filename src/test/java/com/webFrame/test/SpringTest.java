@@ -52,7 +52,7 @@ public class SpringTest {
         entity1.setPassword("asdfasdf");  
         entity1.setRegionName("北京");  
         entity1.setWorks(1);  
-        userDao.insert(entity1);  
+//        userDao.insert(entity1);  
         userDao.update(entity1);  
         userDao.createCollection();  
       
@@ -61,12 +61,12 @@ public class SpringTest {
             System.out.println("all - id=" + e.getId() + ", age=" + e.getAge() + ", password=" + e.getPassword() + ", regionName=" + e.getRegionName() + ", special=" + Arrays.toString(e.getSpecial())  
                     + ", name=" + e.getName() + ", birth=" + e.getBirth());  
         }  
-//        list.clear();
-//        list = userDao.findListByAge(1);  
-//        for (User e : list) {  
-//            System.out.println("age=1 - id=" + e.getId() + ", age=" + e.getAge() + ", password=" + e.getPassword() + ", regionName=" + e.getRegionName() + ", special="  
-//                    + Arrays.toString(e.getSpecial()) + ", name=" + e.getName() + ", birth=" + e.getBirth());  
-//        }  
+        list.clear();
+        list = userDao.findListByAge(1);  
+        for (User e : list) {  
+            System.out.println("age=1 - id=" + e.getId() + ", age=" + e.getAge() + ", password=" + e.getPassword() + ", regionName=" + e.getRegionName() + ", special="  
+                    + Arrays.toString(e.getSpecial()) + ", name=" + e.getName() + ", birth=" + e.getBirth());  
+        }  
 //  
 //        User e = userDao.findOne("5");  
 //        System.out.println("id=1 - id=" + e.getId() + ", age=" + e.getAge() + ", password=" + e.getPassword() + ", regionName=" + e.getRegionName() + ", special=" + Arrays.toString(e.getSpecial())  

@@ -3,6 +3,8 @@ package com.z2.controller;
 import javax.servlet.http.HttpServletRequest;
 //import javax.validation.Valid;
 
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,12 +16,14 @@ import com.z2.service.UserManager;
 @Controller 
 @RequestMapping 
 public class RegisterController {
+	
+	private Logger logger = Logger.getLogger(LoginController.class);
 	@Autowired
 	private UserManager userManager;
 	@RequestMapping("/register")
 	public ModelAndView login(HttpServletRequest request, User registerUser) {
-		System.out.println("register:" + "username:" + registerUser.getName());
-		System.out.println("register:" + "password:" + registerUser.getPassword());
+		logger.info("register:" + "username:" + registerUser.getName());
+		logger.info("register:" + "password:" + registerUser.getPassword());
 		ModelAndView mav = new ModelAndView();
 //		if(bindingresult.hasErrors()){
 //			mav.setViewName("register");
