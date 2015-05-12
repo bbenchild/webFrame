@@ -38,24 +38,24 @@ public class UserManagerImpl implements UserManager {
 	@Override
 	public boolean checkUser(User user) {
 		// TODO Auto-generated method stub
-		List<User> list =  dao.findListByAge(0);
-		logger.info("list.size:" + list.size());
-		if(list.size()>0){
-			return true;
-		}
-		else{
-			return false;
-		}
-//		User muser = dao.findOneByUsername(user.getName());
-//		if (muser != null && muser.getPassword() != null) {
-//			if (muser.getPassword().equals(user.getPassword())) {
-//				return true;
-//			} else {
-//				return false;
-//			}
-//		} else {
+//		List<User> list =  dao.findListByAge(0);
+//		logger.info("list.size:" + list.size());
+//		if(list.size()>0){
+//			return true;
+//		}
+//		else{
 //			return false;
 //		}
+		User muser = dao.findOneByUsername(user.getName());
+		if (muser != null && muser.getPassword() != null) {
+			if (muser.getPassword().equals(user.getPassword())) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
 	}
 
 }

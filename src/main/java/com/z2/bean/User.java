@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Repository;
 
 @Repository 
-@Document(collection = "user")
+@Document(collection = "cuser")
 public class User {
 
     @Id  
